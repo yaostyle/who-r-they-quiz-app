@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="0dp"
+    android:background="#006ab2"
+    tools:context="com.android.chrishsu.who_r_theyquiz.MainActivity">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="34sp"
+            android:paddingTop="100dp"
+            android:textColor="#fff"
+            android:text="Your Score"/>
+
+        <TextView
+            android:id="@+id/percent_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="0%"
+            android:textColor="#fff"
+            android:textSize="160dp" />
+
+        <TextView
+            android:id="@+id/correct_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="You've got 10 out of 12 corrected."
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:textColor="#fff"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#146eff"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:padding="16dp"
+            android:textColor="#fff"
+            android:onClick="restartBtn"
+            android:text="Restart Quiz"/>
+    </LinearLayout>
+
+</ScrollView>
+
+
+</LinearLayout>
