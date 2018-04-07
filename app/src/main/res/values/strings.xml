@@ -1,4 +1,14 @@
 <resources>
     <string name="app_name">Who-R-They? Quiz</string>
     <string name="title_activity_results">Results</string>
+    <string name="txt_pls_enter_ur_name">Please enter your name!</string>
+    <string name="txt_who_r_they_quiz">Who-R-They? Quiz</string>
+    <string name="txt_first_enter_your_name">First, enter your name to begin:</string>
+    <string name="txt_enter_quiz">Enter Quiz</string>
+    <string name="txt_quiz">Quiz:\u0020</string>
+    <string name="txt_toast_wrong_ans">Sorry, WRONG answer! \u0020 [Score:\u0020 %1$s\u0020]</string>
+    <string name="txt_toast_correct_ans">Your answer is CORRECT! \u0020 [Score:\u0020%1$s\u0020]</string>
+    <string name="txt_youve_got_x_out_of_x_correct">"You've got %1$s out of %2$s correct."</string>
+    <string name="txt_your_score">Your Score</string>
+    <string name="txt_restart_quiz">Restart Quiz</string>
 </resources>

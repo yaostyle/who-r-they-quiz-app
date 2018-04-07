@@ -70,17 +70,11 @@ public class MainActivity extends AppCompatActivity {
                     if (correctAns.equals(mAnswer)) {
                         //If correct, score a point
                         mScore++;
-                        //Make a toast message for correct answer
-                        Toast.makeText(MainActivity.this,
-                                "Your answer is CORRECT! [Score: " +
-                                        String.valueOf(mScore) + "]",
-                                Toast.LENGTH_SHORT).show();
+                        //Display correct answer in toast
+                        displayToastCorrectAnswer();
                     } else {
-                        //Make a toast message for incorrect answer
-                        Toast.makeText(MainActivity.this,
-                                "Sorry, WRONG answer! [Score: " +
-                                        String.valueOf(mScore) + "]",
-                                Toast.LENGTH_SHORT).show();
+                        //Display wrong answer in toast
+                        displayToastWrongAnswer();
                     }
                 }
                 //Logics for Radio Button questionary
@@ -90,18 +84,11 @@ public class MainActivity extends AppCompatActivity {
                         //If correct, score a point
                         mScore++;
 
-                        //Make a toast message for correct answer
-                        Toast.makeText(MainActivity.this,
-                                "Your answer is CORRECT! [Score: " +
-                                        String.valueOf(mScore) + "]",
-                                Toast.LENGTH_SHORT).show();
-
+                        //Display correct answer in toast
+                        displayToastCorrectAnswer();
                     } else {
-                        //Make a toast message for incorrect answer
-                        Toast.makeText(MainActivity.this,
-                                "Sorry, WRONG answer! [Score: " +
-                                        String.valueOf(mScore) + "]",
-                                Toast.LENGTH_SHORT).show();
+                        //Display wrong answer in toast
+                        displayToastWrongAnswer();
                     }
                 }
                 //Pause for second
@@ -132,6 +119,29 @@ public class MainActivity extends AppCompatActivity {
                 updateQuestion();
             }
         });
+    }
+
+    //Make a toast message for incorrect answer
+    private void displayToastWrongAnswer() {
+        //Get the string vars
+        String wrong_ans = getString(R.string.txt_toast_wrong_ans,
+                String.valueOf(mScore));
+        //Display toast
+        Toast.makeText(MainActivity.this,
+                wrong_ans,
+                Toast.LENGTH_SHORT).show();
+    }
+
+    //Make a toast message for correct answer
+    private void displayToastCorrectAnswer(){
+
+        //Get the string vars
+        String correct_ans = getString(R.string.txt_toast_correct_ans,
+                String.valueOf(mScore));
+        //Display toast
+        Toast.makeText(MainActivity.this,
+                correct_ans,
+                Toast.LENGTH_SHORT).show();
     }
 
     private void updateQuestion() {

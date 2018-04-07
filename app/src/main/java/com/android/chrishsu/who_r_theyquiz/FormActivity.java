@@ -31,8 +31,9 @@ public class FormActivity extends AppCompatActivity {
 
         if (mName.equals("")){
             //If empty string, make a toast message
+            String enter_name = getString(R.string.txt_pls_enter_ur_name);
             Toast.makeText(FormActivity.this,
-                    "Please enter your name!",
+                    enter_name,
                     Toast.LENGTH_SHORT).show();
         }else{
             //Go to quiz

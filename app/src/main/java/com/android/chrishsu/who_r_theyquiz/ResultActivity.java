@@ -33,7 +33,10 @@ public class ResultActivity extends AppCompatActivity {
 
         //Update views
         mPercentText.setText(String.format("%s%%",Integer.toString(Integer.valueOf(mPercentScore)) ));
-        mCorrectText.setText(String.format("You've got %s out of %s correct.",finalScore, totalQuestions));
+        //Getting text vars
+        String final_score_txt = getString(R.string.txt_youve_got_x_out_of_x_correct,
+                finalScore,totalQuestions);
+        mCorrectText.setText(final_score_txt);
 
     }
 

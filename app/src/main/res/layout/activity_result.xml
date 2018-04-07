@@ -23,7 +23,7 @@
             android:textSize="34sp"
             android:paddingTop="100dp"
             android:textColor="#fff"
-            android:text="Your Score"/>
+            android:text="@string/txt_your_score"/>
 
         <TextView
             android:id="@+id/percent_textview"
@@ -53,7 +53,7 @@
             android:padding="16dp"
             android:textColor="#fff"
             android:onClick="restartBtn"
-            android:text="Restart Quiz"/>
+            android:text="@string/txt_restart_quiz"/>
     </LinearLayout>
 
 </ScrollView>
