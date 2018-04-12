@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private int mScore = 0;
     private int mQuizNum = 1;
     private int QuestionNum = 0;
+    private int cbClicks = 0;
     private TextView mQuestionView;
     private TextView mQuizNumView;
     private TextView mNameView;
@@ -121,6 +122,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Make a toast message for number of checkbox clicked
+    private void displayToastCheckBoxClick(int count, int q) {
+        //Get the string vars
+        int maxAns = mQuestions.getMaxAnswer(q);
+        String rb_click = getString(R.string.txt_toast_cb_clicks,
+                String.valueOf(count), String.valueOf(maxAns));
+        //Display toast
+        Toast.makeText(MainActivity.this,
+                rb_click,
+                Toast.LENGTH_SHORT).show();
+    }
+
     //Make a toast message for incorrect answer
     private void displayToastWrongAnswer() {
         //Get the string vars
@@ -182,7 +195,8 @@ public class MainActivity extends AppCompatActivity {
     private void showCheckBoxAnswers(int qnum) {
         //Setting answers_layout (linear view)
         final LinearLayout answers_layout = (LinearLayout) findViewById(R.id.answers_layout);
-
+        //Reset checkbox click counts
+        cbClicks = 0;
         //Create CheckBoxes in array list
         for (int i = 0; i <= 2; i++) {
             //Setting checkbox's params
@@ -192,15 +206,34 @@ public class MainActivity extends AppCompatActivity {
             cbl[i].setPadding(8, 16, 8, 16);
             cbl[i].setTextSize(24);
             cbl[i].setId(i);
+
+            //Add checkbox listener
+            cbl[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //If click any checkbox, addto the cbClicks count
+                    if(((CheckBox)view).isChecked()){
+                        //Increment by 1
+                        cbClicks++;
+                        //Display toast message
+                        displayToastCheckBoxClick(cbClicks, QuestionNum);
+                    }else{
+                        //If uncheck, decrease by 1
+                        cbClicks--;
+                        displayToastCheckBoxClick(cbClicks, QuestionNum);
+                    }
+                }
+            });
+
             //Add to answer_layout view
             answers_layout.addView(cbl[i]);
         }
+
     }
 
     private void showRadioButtonAnswers(int qnum) {
         //Setting answers_layout (linear view)
         final LinearLayout answers_layout = (LinearLayout) findViewById(R.id.answers_layout);
-
         //Create RadioGroup
         RadioGroup rg = new RadioGroup(this);
         rg.setOrientation(RadioGroup.VERTICAL);
