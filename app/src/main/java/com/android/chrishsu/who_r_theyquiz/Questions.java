@@ -64,6 +64,20 @@ public class Questions {
 
     };
 
+    private int mMaxAnswer[] = {
+            1,
+            1,
+            1,
+            3,
+            1,
+            1,
+            1,
+            2,
+            1,
+            1
+
+    };
+
     private String mCorrectAnswer[] = {
             "Sundar Pichai",
             "Steve Jobs",
@@ -98,6 +112,10 @@ public class Questions {
         return type;
     }
 
+    public int getMaxAnswer(int q) {
+        int maxanswer = mMaxAnswer[q];
+        return maxanswer;
+    }
     public int getLength() {
         return mQuestions.length;
     }
