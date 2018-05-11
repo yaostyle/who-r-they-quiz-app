@@ -8,6 +8,7 @@
     <string name="txt_quiz">Quiz:\u0020</string>
     <string name="txt_toast_wrong_ans">Sorry, WRONG answer! \u0020 [Score:\u0020 %1$s\u0020]</string>
     <string name="txt_toast_correct_ans">Your answer is CORRECT! \u0020 [Score:\u0020%1$s\u0020]</string>
+    <string name="txt_toast_cb_clicks">You\'ve selected %1$s out of %2$s choices.</string>
     <string name="txt_youve_got_x_out_of_x_correct">"You've got %1$s out of %2$s correct."</string>
     <string name="txt_your_score">Your Score</string>
     <string name="txt_restart_quiz">Restart Quiz</string>
