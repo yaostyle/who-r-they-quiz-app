@@ -10,10 +10,13 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -57,6 +60,20 @@ public class MainActivity extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //Logics for EditText questionary
+                if (mQuestions.getType(QuestionNum) == "edittext") {
+                    if (mQuestions.getCorrectAnswer(QuestionNum).toLowerCase().equals(mAnswer)) {
+                        //If correct, score a point
+                        mScore++;
+
+                        //Display correct answer in toast
+                        displayToastCorrectAnswer();
+                    }else{
+                        //Display wrong answer in toast
+                        displayToastWrongAnswer();
+                    }
+                }
 
                 //Logics for Checkbox questionary
                 if (mQuestions.getType(QuestionNum) == "checkbox") {
@@ -184,6 +201,11 @@ public class MainActivity extends AppCompatActivity {
             showRadioButtonAnswers(QuestionNum);
         }
 
+        if (mQuestions.getType(QuestionNum) == "edittext") {
+            showEditText(QuestionNum);
+        }
+
+
         //Show the question main image
         showMainImage(QuestionNum);
 
@@ -198,6 +220,38 @@ public class MainActivity extends AppCompatActivity {
         String img = mQuestions.getImage(QuestionNum);
         //Update image view
         mQuizImage.setImageResource(getResources().getIdentifier(img, "drawable", getPackageName()));
+    }
+
+    private void showEditText(int qnum) {
+        //Setting answers_layout (linear view)
+        final LinearLayout answers_layout = (LinearLayout) findViewById(R.id.answers_layout);
+
+        //Create EditText
+        EditText et = new EditText(this);
+        //Set params
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT);
+        et.setLayoutParams(lp);
+        answers_layout.addView(et);
+
+        et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //skip
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                //skip
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                mAnswer = editable.toString().toLowerCase();
+            }
+        });
+
     }
 
     private void showCheckBoxAnswers(int qnum) {

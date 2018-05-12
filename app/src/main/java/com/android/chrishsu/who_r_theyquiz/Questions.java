@@ -11,7 +11,7 @@ public class Questions {
     private String mQuestions[] = {
             "Who is this person?",
             "Do you know who is this?",
-            "Guess who he is?",
+            "What's Bill's last name?",
             "Who is \"it\"? (Check all apply)",
             "Who is he?",
             "Guess who?",
@@ -25,7 +25,7 @@ public class Questions {
     private String mChoice[][] = {
             {"Rajeev Suri", "Sundar Pichai", "Satya Nadella"},
             {"Steve Wozniak", "Steve Jobs", "Steve Ballmer"},
-            {"Bill Gates", "Bill Clintons", "Bill Cosby"},
+            {""},
             {"Android", "MobileOS", "Robot"},
             {"John Hancock","John Lennon","John L. Flannery"},
             {"Jeff Dunham","Jeff Bezos","Jeff Perry"},
@@ -53,7 +53,7 @@ public class Questions {
     private String mQuestionType[] = {
             "radiobutton",
             "radiobutton",
-            "radiobutton",
+            "edittext",
             "checkbox",
             "radiobutton",
             "radiobutton",
@@ -81,7 +81,7 @@ public class Questions {
     private String mCorrectAnswer[] = {
             "Sundar Pichai",
             "Steve Jobs",
-            "Bill Gates",
+            "Gates",
             "Android,MobileOS,Robot",
             "John L. Flannery",
             "Jeff Bezos",
