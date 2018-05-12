@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
 
                 //Logics for EditText questionary
                 if (mQuestions.getType(QuestionNum) == "edittext") {
+                    //Validate mAnswer with user's input
+                    //Also, make sure both value are in small letters to be compared 
                     if (mQuestions.getCorrectAnswer(QuestionNum).toLowerCase().equals(mAnswer)) {
                         //If correct, score a point
                         mScore++;
