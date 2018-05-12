@@ -68,15 +68,24 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //Validate answer
                     String correctAns = mQuestions.getCorrectAnswer(QuestionNum);
-                    if (correctAns.equals(mAnswer)) {
+                    //Split correct answer by commma (,)
+                    String[] ckboxAnsList = correctAns.split(",");
+                    boolean isCorrect = false;
+
+                    //Loop through the correct answers and compare with user answer.
+                    //If any of the correct answer was checked, user scores.
+                    for (int ci=0; ci<ckboxAnsList.length; ci++){
+                        if (ckboxAnsList[ci].equals(mAnswer)) {
+                            isCorrect = true;
+                        }
+                    }
+                    if (isCorrect) {
                         //If correct, score a point
                         mScore++;
-                        //Display correct answer in toast
-                        displayToastCorrectAnswer();
-                    } else {
-                        //Display wrong answer in toast
-                        displayToastWrongAnswer();
                     }
+
+                    //Display correct answer in toast
+                    displayToastCorrectAnswer();
                 }
                 //Logics for Radio Button questionary
                 if (mQuestions.getType(QuestionNum) == "radiobutton") {
@@ -169,7 +178,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Check which type of question: checkbox or radio
         if (mQuestions.getType(QuestionNum) == "checkbox") {
-            Log.e("Checkbox here.........", "");
             showCheckBoxAnswers(QuestionNum);
         }
         if (mQuestions.getType(QuestionNum) == "radiobutton") {

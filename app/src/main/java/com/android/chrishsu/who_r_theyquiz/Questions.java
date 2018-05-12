@@ -82,11 +82,11 @@ public class Questions {
             "Sundar Pichai",
             "Steve Jobs",
             "Bill Gates",
-            "AndroidMobileOSRobot",
+            "Android,MobileOS,Robot",
             "John L. Flannery",
             "Jeff Bezos",
             "Mark Parker",
-            "Tesla CEOXspace CEO",
+            "Tesla CEO,Xspace CEO",
             "SnapChat",
             "Larry Page"
 
