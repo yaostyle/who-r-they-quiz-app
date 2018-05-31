@@ -1,6 +1,8 @@
 # who-r-they-quiz
 Who-R-They Quiz App - Grow With Google / Udacity Project 3 (Quiz App)
 
+![alt text](https://pbs.twimg.com/media/DZ7NuErX0AEXmdd.jpg:large)
+
 This is an Android app for Udacity's Android Basic lesson.
 
 It's been a great journey for me to learn Android Basics since this course started back in January of 2018. And here's my so-called final project. First of all, I do have some web programming background therefore I really want to push myself to the limit and apply all of the Android/JAVA skills I learned from the course plus a little two cents of my own. I also do online search for the techniques that I never knew of and really want to achieve it.
